@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Markdown Preview</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+      .editor,
+      .preview {
+        flex: 1;
+        padding: 16px;
+        box-sizing: border-box;
+      }
+      .editor {
+        border: none;
+        border-right: 1px solid #ccc;
+        resize: none;
+        font-family: monospace;
+        font-size: 14px;
+      }
+      .preview {
+        overflow-y: auto;
+      }
+      .preview pre {
+        background: #f5f5f5;
+        padding: 12px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+      .preview code {
+        font-family: monospace;
+      }
+      .preview table {
+        border-collapse: collapse;
+      }
+      .preview th,
+      .preview td {
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+      }
+    </style>
+  <link rel="modulepreload" href="/md-preview/md-preview-6497c6e41fe6749c.js" crossorigin="anonymous" integrity="sha384-UvY9XDqtR6HRt8AUYhf3OwqxSbT6WsNOitsOovf4TdCLF1GrtxtCE9bzh59pxL3Z"><link rel="preload" href="/md-preview/md-preview-6497c6e41fe6749c_bg.wasm" crossorigin="anonymous" integrity="sha384-VThilBUD0HI4eRY234hAcB5df0QdQ1K0SbDtQGBWyewNpmIhd5pdmc1WHHlgB2GX" as="fetch" type="application/wasm"></head>
+  <body>
+<script type="module">
+import init, * as bindings from '/md-preview/md-preview-6497c6e41fe6749c.js';
+const wasm = await init({ module_or_path: '/md-preview/md-preview-6497c6e41fe6749c_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
