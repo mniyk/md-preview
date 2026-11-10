@@ -44,12 +44,29 @@
         border: 1px solid #ccc;
         padding: 6px 12px;
       }
+      .preview pre.mermaid {
+        background: none;
+        text-align: center;
+      }
     </style>
-  <link rel="modulepreload" href="/md-preview/md-preview-6497c6e41fe6749c.js" crossorigin="anonymous" integrity="sha384-UvY9XDqtR6HRt8AUYhf3OwqxSbT6WsNOitsOovf4TdCLF1GrtxtCE9bzh59pxL3Z"><link rel="preload" href="/md-preview/md-preview-6497c6e41fe6749c_bg.wasm" crossorigin="anonymous" integrity="sha384-VThilBUD0HI4eRY234hAcB5df0QdQ1K0SbDtQGBWyewNpmIhd5pdmc1WHHlgB2GX" as="fetch" type="application/wasm"></head>
+    
+    <script src="mermaid.min.js"></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({ startOnLoad: false, suppressErrorRendering: true });
+      }
+      window.renderMermaid = function () {
+        if (!window.mermaid) return;
+        mermaid
+          .run({ querySelector: ".preview pre.mermaid", suppressErrors: true })
+          .catch(function () {});
+      };
+    </script>
+  <link rel="modulepreload" href="/md-preview/md-preview-72b1f7a1a3db4fb1.js" crossorigin="anonymous" integrity="sha384-utsXooa6Sl/2P2ZDgEtUnZB8UTxkIY7CIAJ90NmosJxXpanba1nE7PfRk/KHY3Ey"><link rel="preload" href="/md-preview/md-preview-b12e84376f1428b5_bg.wasm" crossorigin="anonymous" integrity="sha384-yLvv/srXg03cpskQlwO+d63zrGjuIAPGr6bDdUlOS92dVhK/Etzok4+OlxH65K3A" as="fetch" type="application/wasm"></head>
   <body>
 <script type="module">
-import init, * as bindings from '/md-preview/md-preview-6497c6e41fe6749c.js';
-const wasm = await init({ module_or_path: '/md-preview/md-preview-6497c6e41fe6749c_bg.wasm' });
+import init, * as bindings from '/md-preview/md-preview-72b1f7a1a3db4fb1.js';
+const wasm = await init({ module_or_path: '/md-preview/md-preview-b12e84376f1428b5_bg.wasm' });
 
 
 window.wasmBindings = bindings;

@@ -44,7 +44,24 @@
         border: 1px solid #ccc;
         padding: 6px 12px;
       }
+      .preview pre.mermaid {
+        background: none;
+        text-align: center;
+      }
     </style>
+    <link data-trunk rel="copy-file" href="vendor/mermaid.min.js" />
+    <script src="mermaid.min.js"></script>
+    <script>
+      if (window.mermaid) {
+        mermaid.initialize({ startOnLoad: false, suppressErrorRendering: true });
+      }
+      window.renderMermaid = function () {
+        if (!window.mermaid) return;
+        mermaid
+          .run({ querySelector: ".preview pre.mermaid", suppressErrors: true })
+          .catch(function () {});
+      };
+    </script>
   </head>
   <body></body>
 </html>
